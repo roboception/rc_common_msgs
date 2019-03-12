@@ -1,9 +1,4 @@
-cmake_minimum_required(VERSION 2.8.3)
-
-# Don't set PROJECT_VERSION to empty string when no VERSION is given to project() command.
-if(POLICY CMP0048)
-  cmake_policy(SET CMP0048 OLD)
-endif()
+cmake_minimum_required(VERSION 2.8.12)
 
 project(rc_common_msgs)
 include(cmake/project_version.cmake)
