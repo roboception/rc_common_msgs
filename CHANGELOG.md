@@ -1,3 +1,9 @@
+0.2.0 (2019-03-14)
+------------------
+
+- add INTERNAL_ERROR and IO_ERROR as constants to return codes
+- improve constants description
+
 0.1.0 (2019-03-11)
 ------------------
 
