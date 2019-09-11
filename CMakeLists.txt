@@ -14,6 +14,7 @@ endif ()
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   message_generation
+  std_msgs
 )
 
 
@@ -45,6 +46,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## Generate messages in the 'msg' folder
 add_message_files(
   FILES
+  CameraParams.msg
   KeyValue.msg
   ReturnCode.msg
   ReturnCodeConstants.msg
@@ -58,9 +60,9 @@ add_service_files(
 
 ## Generate added messages and services with any dependencies listed here
 generate_messages(
-  # DEPENDENCIES
+  DEPENDENCIES
   # sensor_msgs
-  # std_msgs
+  std_msgs
   # geometry_msgs
   # nav_msgs
 )
