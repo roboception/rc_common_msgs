@@ -1,3 +1,8 @@
+0.4.0 (2019-12-04)
+------------------
+
+* Renamed CameraParams to CameraParam for consistency with internal message
+
 0.3.0 (2019-09-11)
 ------------------
 
