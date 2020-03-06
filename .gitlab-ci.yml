@@ -8,12 +8,6 @@ variables:
 #########################
 # Templates using anchors
 #########################
-.amd64_trusty_t: &amd64_trusty_job
-  image: registry.roboception.de/tools/docker_images:indigo-perception-pcl
-  tags:
-    - amd64
-    - docker
-
 .armhf_trusty_t: &armhf_trusty_job
   image: registry.roboception.de/tools/docker_images:armhf-indigo-perception
   tags:
@@ -111,8 +105,6 @@ variables:
 ##############
 gen_dox:
   <<: *amd64_bionic_job
-  variables:
-    TESTING_DEBS: "true"
   stage: deploy
   script:
     - apt-get install -y doxygen ncftp ros-${ROS_DISTRO}-rosdoc-lite
@@ -130,10 +122,6 @@ gen_dox:
 
 # Test against latest (on every commit)
 #######################################
-test:trusty:amd64:
-  <<: *amd64_trusty_job
-  extends: .test_latest
-
 test:trusty:armhf:
   <<: *armhf_trusty_job
   extends: .test_latest
@@ -156,10 +144,6 @@ test:bionic:armhf:
 
 # Test against stable (is allowed to fail)
 ##########################################
-test_stable:trusty:amd64:
-  <<: *amd64_trusty_job
-  extends: .test_stable
-
 test_stable:trusty:armhf:
   <<: *armhf_trusty_job
   extends: .test_stable
@@ -182,10 +166,6 @@ test_stable:bionic:armhf:
 
 # Deploy testing (only on master)
 #################################
-package_testing:trusty:amd64:
-  <<: *amd64_trusty_job
-  extends: .package_testing
-
 package_testing:trusty:armhf:
   <<: *armhf_trusty_job
   extends: .package_testing
@@ -212,10 +192,6 @@ package_testing:bionic:armhf:
 
 # Test against stable if it is a release
 ########################################
-test_release:trusty:amd64:
-  <<: *amd64_trusty_job
-  extends: .test_release
-
 test_release:trusty:armhf:
   <<: *armhf_trusty_job
   extends: .test_release
@@ -238,10 +214,6 @@ test_release:bionic:armhf:
 
 # Deploy stable (only for releases, version tags)
 #################################################
-package_stable:trusty:amd64:
-  <<: *amd64_trusty_job
-  extends: .package_stable
-
 package_stable:trusty:armhf:
   <<: *armhf_trusty_job
   extends: .package_stable
