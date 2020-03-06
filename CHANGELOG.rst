@@ -1,3 +1,8 @@
+0.4.1 (2020-03-06)
+------------------
+
+* add CAPACITY_EXCEEDED and CAPACITY_REACHED to ReturnCodeConstants
+
 0.4.0 (2019-12-04)
 ------------------
 
