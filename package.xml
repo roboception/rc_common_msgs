@@ -8,12 +8,16 @@
 
   <license>BSD</license>
 
-  <url type="website">http://roboception.de</url>
+  <url type="website">https://wiki.ros.org/rc_common_msgs</url>
+  <url type="repository">https://github.com/roboception/rc_common_msgs</url>
+  <url type="bugtracker">https://github.com/roboception/rc_common_msgs/issues</url>
 
   <buildtool_depend>catkin</buildtool_depend>
 
   <build_depend>message_generation</build_depend>
   <exec_depend>message_runtime</exec_depend>
   <depend>std_msgs</depend>
+
+  <doc_depend>doxygen</doc_depend>
 
 </package>
