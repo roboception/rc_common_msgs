@@ -1,9 +1,11 @@
 before_script:
+  - export DEBIAN_FRONTEND=noninteractive
+  - apt-get update -yq && apt-get install -y curl lsb-release
   - export DISTRO_CODENAME=`lsb_release -cs` && echo Using distro $DISTRO_CODENAME
-  - apt-get update -yq
 
 variables:
   GET_SOURCES_ATTEMPTS: "3"
+  GIT_DEPTH: "0"
 
 #########################
 # Templates using anchors
